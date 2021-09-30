@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+
+import NavBar from "./Components/NavBar";
+import QuizPage from "./Pages/QuizPage/QuizPage";
+import TriangleAreaPage from "./Pages/Triangle Area Page/TriangleAreaPage";
+import HypotenuesPage from "./Pages/Hypotenues Page/HypotenuesPage";
+import VerifyTrianglePage from "./Pages/Verify Triangle Page/VerityTrianglePage";
+
+import { BrowserRouter as Router , Switch , Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <NavBar />
+      </div>
+
+      <Switch>
+        <Route path="/quiz">
+          <QuizPage />
+        </Route>
+        <Route path="/triangle-area" >
+          <TriangleAreaPage />
+        </Route>
+        <Route path="/hypotenues" >
+          <HypotenuesPage />
+        </Route>
+        <Route path="/verify-triangle" >
+          <VerifyTrianglePage />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
